@@ -21,5 +21,17 @@ public class UserRegistration {
         return mobileNumber.matches(regex);
     }
 
+    public boolean validatePassword(String password) {
+        String rule1 = ".{8,}"; // Minimum 8 characters
+        String rule2 = "(?=.*[A-Z]).*"; // At least one uppercase letter
+        String rule3 = "(?=.*[0-9]).*"; // At least one numeric number
+        String rule4 = "(?=.*[@#$%^&+=!]).*"; // At least one special character
+
+        return password.matches(rule1) &&
+                password.matches(rule2) &&
+                password.matches(rule3) &&
+                password.matches(rule4);
+    }
+
 
 }
