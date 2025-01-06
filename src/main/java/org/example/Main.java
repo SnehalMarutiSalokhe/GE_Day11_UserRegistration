@@ -16,5 +16,9 @@ public class Main {
             System.out.println(userRegistration.validateLastName("Doe"));  // Should return true
             System.out.println(userRegistration.validateLastName("do"));   // Should return false
 
+            System.out.println("Email Validation:");
+            System.out.println(userRegistration.validateEmail("abc.xyz@bl.co.in")); // Should return true
+            System.out.println(userRegistration.validateEmail("abc@.com.my"));     // Should return false
+
     }
 }
