@@ -16,5 +16,10 @@ public class UserRegistration {
         return email.matches(regex);
     }
 
+    public boolean validateMobileNumber(String mobileNumber) {
+        String regex = "^[0-9]{1,3} [0-9]{10}$"; // Country code followed by space and 10-digit number
+        return mobileNumber.matches(regex);
+    }
+
 
 }
