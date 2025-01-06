@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.*;
+
 public class UserRegistration {
 
     public boolean validateFirstName(String firstName) {
@@ -31,6 +33,14 @@ public class UserRegistration {
                 password.matches(rule2) &&
                 password.matches(rule3) &&
                 password.matches(rule4);
+    }
+
+    public List<Boolean> validateEmailSamples(List<String> emails) {
+        List<Boolean> results = new ArrayList<>();
+        for (String email : emails) {
+            results.add(validateEmail(email));
+        }
+        return results;
     }
 
 
