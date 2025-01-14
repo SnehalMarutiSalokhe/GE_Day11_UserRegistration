@@ -1,5 +1,5 @@
-package org.example;
 
+import org.example.UserRegistration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserRegistrationTest {
+
     // Create an instance of UserRegistration class
     UserRegistration userRegistration = new UserRegistration();
 
@@ -37,7 +38,6 @@ public class UserRegistrationTest {
             "abc@gmail.com.1a",      // Invalid email - TLD with two characters contains a digit
             "abc@gmail.com.aa.au"    // Invalid email - Multiple TLDs are not allowed
     })
-
     void testEmailValidation(String email) {
         // Validate the email using the UserRegistration's validateEmail method
         boolean isValid = userRegistration.validateEmail(email);
@@ -51,7 +51,7 @@ public class UserRegistrationTest {
     }
     @Test
 
-    void testFirstNameValidation() {
+    void testFirstNameValidation() throws UserRegistration.UserRegistrationException {
         // Happy Test Case
         assertTrue(userRegistration.validateFirstName("John"));
         // Sad Test Case
@@ -59,7 +59,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    void testLastNameValidation() {
+    void testLastNameValidation() throws UserRegistration.UserRegistrationException {
         // Happy Test Case
         assertTrue(userRegistration.validateLastName("Doe"));
         // Sad Test Case
